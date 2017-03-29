@@ -6,6 +6,7 @@
       package:
         name: unzip
         state: present
+        update_cache: True
 
   roles:
     - role_under_test
