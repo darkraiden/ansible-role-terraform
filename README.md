@@ -3,7 +3,7 @@ Ansible Role Terraform
 
 [![Build Status](https://travis-ci.org/darkraiden/ansible-role-terraform.svg?branch=master)](https://travis-ci.org/darkraiden/ansible-role-terraform)
 
-An Ansible Role that installs Terraform on Debian and RedHat systems.
+An Ansible Role that installs Terraform on Debian and RedHat systems
 
 Requirements
 ------------
