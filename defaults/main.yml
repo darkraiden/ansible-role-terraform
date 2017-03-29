@@ -1,0 +1,7 @@
+---
+
+terraform_version: 0.9.0
+terraform_platform: amd64
+terraform_compressed_file: terraform_{{ terraform_version }}_linux_{{ terraform_platform }}.zip
+terraform_filename: terraform
+terraform_url: "https://releases.hashicorp.com/terraform/{{ terraform_version }}/terraform_{{ terraform_version }}_linux_{{ terraform_platform }}.zip"

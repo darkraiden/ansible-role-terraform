@@ -1,0 +1,27 @@
+---
+
+- name: Check if Terraform is installed
+  stat:
+    path: "/usr/local/bin/{{ terraform_filename }}"
+  register: terraform_filename
+
+- name: Download Terraform
+  get_url:
+    url: "{{ terraform_url }}"
+    dest: /tmp
+  register: terraform_download
+  when: not terraform_filename.stat.exists
+
+- name: Install Terraform
+  become_user: root
+  unarchive:
+    src: "/tmp/{{ terraform_compressed_file }}"
+    dest: /usr/local/bin
+    copy: no
+  when: not terraform_filename.stat.exists
+
+- name: Remove Terraform compressed file
+  file:
+    path: "/tmp/{{ terraform_compressed_file }}"
+    state: absent
+  when: terraform_download.changed

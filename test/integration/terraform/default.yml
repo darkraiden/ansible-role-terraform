@@ -1,0 +1,10 @@
+---
+
+- hosts: all
+  roles:
+    - ansible-role-terraform
+  pre_tasks:
+    - name: Install unzip
+      package:
+        name: unzip
+        state: present
